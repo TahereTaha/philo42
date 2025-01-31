@@ -6,7 +6,7 @@
 /*   By: tatahere <tatahere@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 15:51:50 by tatahere          #+#    #+#             */
-/*   Updated: 2025/01/17 16:01:54 by tatahere         ###   ########.fr       */
+/*   Updated: 2025/01/31 10:49:55 by tatahere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ static int	get_number(int *err_ref, char *str)
 	int	num;
 
 	*err_ref = 1;
+	if (!str[0])
+		return (0);
 	if (!is_int(str))
 		return (0);
 	num = ft_atoi(str);

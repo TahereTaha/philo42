@@ -6,7 +6,7 @@
 /*   By: tatahere <tatahere@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 19:47:55 by tatahere          #+#    #+#             */
-/*   Updated: 2025/01/31 08:37:35 by tatahere         ###   ########.fr       */
+/*   Updated: 2025/01/31 10:47:15 by tatahere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ static int	check_philo(t_philo *philo)
 		print_death(philo);
 		return (1);
 	}
-	if (philo->state.times_eaten >= philo->info.times_to_eat)
+	if (philo->state.times_eaten >= philo->info.times_to_eat && \
+			philo->info.times_to_eat != -1)
 	{
 		pthread_mutex_unlock(&philo->state.lock);
 		return (2);

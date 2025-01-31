@@ -6,7 +6,7 @@
 /*   By: tatahere <tatahere@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 06:46:28 by tatahere          #+#    #+#             */
-/*   Updated: 2025/01/28 17:26:01 by tatahere         ###   ########.fr       */
+/*   Updated: 2025/01/31 09:19:42 by tatahere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	read_args(int argc, char **argv, t_philo_info *philo_info)
 {
 	int	philo_num;
 
-	if (argc != 4 && argc != 5)
+	if (argc != 5 && argc != 6)
 	{
 		ft_putstr_fd("the args are not correct\n", 2);
 		return (-1);
@@ -34,7 +34,6 @@ int	main(int argc, char **argv)
 {
 	t_philo_info	philo_info;
 	int				philo_num;
-	char			buf[2];
 	t_philo			**philo_array;
 
 	printf("this is philosofers.\n");
@@ -44,10 +43,10 @@ int	main(int argc, char **argv)
 	philo_array = philo_run_n(philo_info, philo_num);
 	if (!philo_array)
 	{
-		ft_putstr_fd("malloc error");
+		ft_putstr_fd("malloc error", 2);
 		return (1);
 	}
-	read(0, buf, 1);
+	waiter_run(philo_array);
 	return (0);
 }
 

@@ -6,7 +6,7 @@
 /*   By: tatahere <tatahere@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 06:47:10 by tatahere          #+#    #+#             */
-/*   Updated: 2025/01/28 16:54:33 by tatahere         ###   ########.fr       */
+/*   Updated: 2025/01/31 09:14:14 by tatahere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 //================== utils ===================//
 //============================================//
 
-typedef void *(*t_voidpp)(void *);
+typedef void	*(*t_voidpp)(void *);
 
 //	utils fuctions
 
@@ -113,6 +113,7 @@ void			detach_philo_array(t_philo **philo_array);
 
 //	debug print_functions
 
+size_t			get_time_ms(struct timeval time);
 void			print_time_ms(struct timeval time);
 //	this locks the print mutex
 void			log_first_half(t_philo *philo);
@@ -138,4 +139,6 @@ int				get_philo_info(t_philo_info *info, char **argv);
 
 void			waiter_run(t_philo **philo_array);
 
+void			log_time(struct timeval time, pthread_mutex_t *print);
+void			log_current_time(pthread_mutex_t *print);
 #endif

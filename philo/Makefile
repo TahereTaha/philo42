@@ -6,7 +6,7 @@
 #    By: tatahere <tatahere@student.42barcelon      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/15 06:49:13 by tatahere          #+#    #+#              #
-#    Updated: 2025/01/28 16:34:19 by tatahere         ###   ########.fr        #
+#    Updated: 2025/01/31 09:21:44 by tatahere         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,12 +18,13 @@ SRC_DIR		=	$(ROOT_DIR)src/
 RF		=	rm -rf
 CC		=	cc
 
-CFLAGS	=	-Wall -Wextra -Werror -I./ -g  -fsanitize=address
+CFLAGS	=	-Wall -Wextra -Werror -I./  -g -fsanitize=thread
 
 NAME	=	philo
 
 GENERAL_OBJ		:=	main.o		\
 					mutex.o		\
+					waiter.o		\
 
 OBJ				+= $(GENERAL_OBJ)
 
@@ -38,8 +39,6 @@ OBJ				+= $(UTILS_OBJ)
 
 PHILO_OBJ		:=	philo_make.o				\
 					philo_free.o				\
-					philo_run_1.o				\
-					philo_run_2.o				\
 					philo_run_n.o				\
 					fork_array.o				\
 					make_philo_array.o			\
@@ -83,7 +82,7 @@ VPATH	+= $(SRC_DIR)philo/
 VPATH	+= $(SRC_DIR)philo/debug/
 VPATH	+= $(SRC_DIR)philo/routine/
 VPATH	+= $(SRC_DIR)philo/executor/
-VPATH	+= $(SRC_DIR)monitor/
+VPATH	+= $(SRC_DIR)waiter/
 
 all	:	$(BIN_DIR) $(NAME)
 

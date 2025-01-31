@@ -6,7 +6,7 @@
 /*   By: tatahere <tatahere@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 09:51:18 by tatahere          #+#    #+#             */
-/*   Updated: 2025/01/28 09:29:09 by tatahere         ###   ########.fr       */
+/*   Updated: 2025/01/30 18:23:49 by tatahere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static t_philo_state	get_philo_state(void)
 {
 	t_philo_state	state;
 
-	pthread_mutex_init(&state.lock, NULL);
+	pthread_mutex_init(&(state.lock), NULL);
 	gettimeofday(&state.last_time_eaten, NULL);
 	state.action = SLEAPING;
 	state.times_eaten = 0;

@@ -6,7 +6,7 @@
 /*   By: tatahere <tatahere@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 07:34:40 by tatahere          #+#    #+#             */
-/*   Updated: 2025/01/15 12:38:00 by tatahere         ###   ########.fr       */
+/*   Updated: 2025/01/31 09:20:28 by tatahere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void	free_philo(t_philo *philo)
 {
 	free(philo);
 }
-
 
 void	debug_print_philo(t_philo *philo)
 {

@@ -6,7 +6,7 @@
 /*   By: tatahere <tatahere@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 09:59:48 by tatahere          #+#    #+#             */
-/*   Updated: 2025/01/28 16:36:11 by tatahere         ###   ########.fr       */
+/*   Updated: 2025/01/30 18:46:47 by tatahere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ t_philo	**philo_run_n(t_philo_info philo_info, size_t philo_num)
 		fork_array_destroy(fork_array);
 		return (NULL);
 	}
+	pthread_mutex_lock(print);
 	detach_philo_array(philo_array);
 	free(fork_array);
 	return (philo_array);

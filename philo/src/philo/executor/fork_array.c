@@ -6,13 +6,13 @@
 /*   By: tatahere <tatahere@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 10:24:30 by tatahere          #+#    #+#             */
-/*   Updated: 2025/01/28 16:28:55 by tatahere         ###   ########.fr       */
+/*   Updated: 2025/01/31 09:24:47 by tatahere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-void			fork_array_destroy(pthread_mutex_t **fork_array)
+void	fork_array_destroy(pthread_mutex_t **fork_array)
 {
 	size_t	i;
 

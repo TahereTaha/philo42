@@ -6,7 +6,7 @@
 /*   By: tatahere <tatahere@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 08:28:25 by tatahere          #+#    #+#             */
-/*   Updated: 2025/01/28 09:53:24 by tatahere         ###   ########.fr       */
+/*   Updated: 2025/01/30 21:09:16 by tatahere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,11 @@
 static void	log_change_state(t_philo *philo)
 {
 	log_first_half(philo);
+	printf("\033[0;33m");
 	printf("is sleaping\n");
+	printf("\033[0m");
 	philo->state.action = SLEAPING;
 	pthread_mutex_unlock(philo->print);
-	pthread_mutex_unlock(&philo->state.lock);
 }
 
 void	philo_sleep(t_philo *philo)

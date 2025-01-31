@@ -6,7 +6,7 @@
 /*   By: tatahere <tatahere@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 11:05:19 by tatahere          #+#    #+#             */
-/*   Updated: 2025/01/28 16:40:10 by tatahere         ###   ########.fr       */
+/*   Updated: 2025/01/31 09:25:27 by tatahere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static size_t	pointer_array_len(void **ptr_array)
 }
 
 t_philo	**make_philo_array(t_philo_info info, pthread_mutex_t **fork_array, \
-	   pthread_mutex_t *print)
+		pthread_mutex_t *print)
 {
 	size_t	i;
 	t_philo	**philo_array;

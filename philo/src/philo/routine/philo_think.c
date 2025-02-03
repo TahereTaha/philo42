@@ -6,7 +6,7 @@
 /*   By: tatahere <tatahere@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 07:47:30 by tatahere          #+#    #+#             */
-/*   Updated: 2025/01/31 08:28:07 by tatahere         ###   ########.fr       */
+/*   Updated: 2025/02/03 17:29:47 by tatahere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,25 @@ static void	log_change_state(t_philo *philo)
 	pthread_mutex_unlock(philo->print);
 }
 
+/*
+void	philo_think(t_philo *philo)
+{
+	log_change_state(philo);
+	if (philo->rigth_fork > philo->left_fork)
+		pthread_mutex_lock(philo->rigth_fork);
+	else
+		pthread_mutex_lock(philo->left_fork);
+	log_take_fork(philo);
+	if (philo->rigth_fork > philo->left_fork)
+		pthread_mutex_lock(philo->left_fork);
+	else
+		pthread_mutex_lock(philo->rigth_fork);
+	log_take_fork(philo);
+	return ;
+}
+*/
+// take rigth first if odd and left first if even
+/*
 void	philo_think(t_philo *philo)
 {
 	log_change_state(philo);
@@ -43,6 +62,17 @@ void	philo_think(t_philo *philo)
 		pthread_mutex_lock(philo->left_fork);
 	else
 		pthread_mutex_lock(philo->rigth_fork);
+	log_take_fork(philo);
+	return ;
+}*/
+
+// take first the rigth and then the left.
+void	philo_think(t_philo *philo)
+{
+	log_change_state(philo);
+	pthread_mutex_lock(philo->rigth_fork);
+	log_take_fork(philo);
+	pthread_mutex_lock(philo->left_fork);
 	log_take_fork(philo);
 	return ;
 }

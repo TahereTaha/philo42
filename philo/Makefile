@@ -6,7 +6,7 @@
 #    By: tatahere <tatahere@student.42barcelon      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/15 06:49:13 by tatahere          #+#    #+#              #
-#    Updated: 2025/01/31 09:21:44 by tatahere         ###   ########.fr        #
+#    Updated: 2025/02/03 17:30:46 by tatahere         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SRC_DIR		=	$(ROOT_DIR)src/
 RF		=	rm -rf
 CC		=	cc
 
-CFLAGS	=	-Wall -Wextra -Werror -I./  -g -fsanitize=thread
+CFLAGS	=	-Wall -Wextra -Werror -I./ -O3 #-g -fsanitize=thread
 
 NAME	=	philo
 

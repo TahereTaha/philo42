@@ -6,7 +6,7 @@
 /*   By: tatahere <tatahere@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 16:21:10 by tatahere          #+#    #+#             */
-/*   Updated: 2025/01/17 15:54:47 by tatahere         ###   ########.fr       */
+/*   Updated: 2025/02/06 16:00:20 by tatahere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ int	is_int(char *str)
 
 	i = 0;
 	sign = 0;
+	if (str[0] == '\0')
+		return (0);
 	if (str[i] == '+' || str[i] == '-')
 		if (str[i++] == '-')
 			sign = 1;
